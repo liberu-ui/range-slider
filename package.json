@@ -1,0 +1,40 @@
+{
+  "name": "@enso-ui/range-slider",
+  "version": "1.0.0",
+  "description": "range-slider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enso-ui/range-slider.git"
+  },
+  "keywords": [
+    "range-slider",
+    "vue"
+  ],
+  "author": "Adrian Ocneanu <aocneanu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enso-ui/range-slider/issues"
+  },
+  "homepage": "https://github.com/enso-ui/range-slider#readme",
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@vue/cli-plugin-babel": "^4.0.5",
+    "@vue/cli-plugin-eslint": "^4.0.5",
+    "@vue/cli-service": "^4.0.5",
+    "@vue/eslint-config-airbnb": "^5.0.0",
+    "autoprefixer": "^9.6.1",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^6.0.0",
+    "eslint": "^6.8.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-vue": "^6.0.0"
+  },
+  "dependencies": {
+    "vue": "^2.5.16",
+    "nouislider": "^15.4.0"
+  }
+}

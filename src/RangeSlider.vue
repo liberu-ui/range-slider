@@ -21,7 +21,7 @@ export default {
         direction: {
             type: String,
             default: 'ltr',
-            validator: (v) => ['ltr', 'rtl'].includes(v),
+            validator: v => ['ltr', 'rtl'].includes(v),
         },
         manual: {
             type: Boolean,
@@ -34,7 +34,7 @@ export default {
         orientation: {
             type: String,
             default: 'horizontal',
-            validator: (v) => ['horizontal', 'vertical'].includes(v),
+            validator: v => ['horizontal', 'vertical'].includes(v),
         },
         step: {
             type: Number,
@@ -48,7 +48,7 @@ export default {
         value: {
             type: Object,
             required: true,
-            validator: (v) => Object.keys(v).length === 2
+            validator: v => Object.keys(v).length === 2
                 && Object.keys(v).includes('min')
                 && Object.keys(v).includes('max')
                 && Number.isInteger(v.min) && Number.isInteger(v.max)
@@ -62,21 +62,16 @@ export default {
 
     computed: {
         options() {
-            const {
-                value, step, margin, connect, direction,
-                orientation, behaviour, tooltips,
-            } = this;
-
             return {
-                range: value,
-                step,
-                margin,
-                connect,
-                direction,
-                orientation,
-                behaviour,
-                tooltips,
-                start: [value.min, value.max],
+                range: this.value,
+                step: this.step,
+                margin: this.margin,
+                connect: this.connect,
+                direction: this.direction,
+                orientation: this.orientation,
+                behaviour: this.behaviour,
+                tooltips: this.tooltips,
+                start: [this.value.min, this.value.max],
             };
         },
     },
@@ -108,6 +103,10 @@ export default {
         },
         change([min, max]) {
             const int = Number.parseInt;
+
+            if (this.value.min === int(min) && this.value.max === int(max)) {
+                return;
+            }
 
             if (!this.manual) {
                 this.value.min = int(min);
@@ -154,7 +153,7 @@ export default {
 
             .noUi-tooltip {
                 font-size: 10px;
-                padding: 2px
+                padding: 2px;
             }
         }
     }

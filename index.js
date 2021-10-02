@@ -1,3 +1,3 @@
-import Divider from './src/Divider.vue';
+import RangeSlider from './src/RangeSlider.vue';
 
-export default Divider;
+export default RangeSlider;

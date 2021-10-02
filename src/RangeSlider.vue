@@ -1,5 +1,5 @@
 <template>
-    <div class="range-slider"></div>
+    <div class="range-slider"/>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
         direction: {
             type: String,
             default: 'ltr',
-            validator: v => ['ltr', 'rtl'].includes(v),
+            validator: (v) => ['ltr', 'rtl'].includes(v),
         },
         manual: {
             type: Boolean,
@@ -34,7 +34,7 @@ export default {
         orientation: {
             type: String,
             default: 'horizontal',
-            validator: v => ['horizontal', 'vertical'].includes(v),
+            validator: (v) => ['horizontal', 'vertical'].includes(v),
         },
         step: {
             type: Number,
@@ -48,7 +48,7 @@ export default {
         value: {
             type: Object,
             required: true,
-            validator: v => Object.keys(v).length === 2
+            validator: (v) => Object.keys(v).length === 2
                 && Object.keys(v).includes('min')
                 && Object.keys(v).includes('max')
                 && Number.isInteger(v.min) && Number.isInteger(v.max)
@@ -68,10 +68,17 @@ export default {
             } = this;
 
             return {
-                range: value, step, margin, connect, direction, orientation,
-                behaviour, tooltips, start: [value.min, value.max],
+                range: value,
+                step,
+                margin,
+                connect,
+                direction,
+                orientation,
+                behaviour,
+                tooltips,
+                start: [value.min, value.max],
             };
-        }
+        },
     },
 
     watch: {
@@ -111,7 +118,7 @@ export default {
         },
         slide([min, max]) {
             const int = Number.parseInt;
-            this.$emit('slide', {min: int(min), max: int(max)});
+            this.$emit('slide', { min: int(min), max: int(max) });
         },
     },
 };

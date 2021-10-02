@@ -23,6 +23,10 @@ export default {
             default: 'ltr',
             validator: v => ['ltr', 'rtl'].includes(v),
         },
+        manual: {
+            type: Boolean,
+            default: false,
+        },
         margin: {
             type: Number,
             default: 1,
@@ -86,6 +90,7 @@ export default {
     beforeDestroy() {
         this.slider.off('change');
         this.slider.off('set');
+        this.slider.destroy();
     },
 
     methods: {
@@ -95,9 +100,14 @@ export default {
             this.slider.on('slide', this.slide);
         },
         change([min, max]) {
-            this.value.min = Number.parseInt(min);
-            this.value.max = Number.parseInt(max);
-            this.$emit('change', this.value);
+            const int = Number.parseInt;
+
+            if (!this.manual) {
+                this.value.min = int(min);
+                this.value.max = int(max);
+            }
+
+            this.$emit('change', { min: int(min), max: int(max) });
         },
         slide([min, max]) {
             const int = Number.parseInt;

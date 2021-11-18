@@ -45,7 +45,7 @@ export default {
             type: Boolean,
             default: false,
         },
-        value: {
+        modelValue: {
             type: Object,
             required: true,
             validator: v => Object.keys(v).length === 2
@@ -56,6 +56,8 @@ export default {
         },
     },
 
+    emits: ['change', 'slide'],
+
     data: () => ({
         slider: null,
     }),
@@ -63,7 +65,7 @@ export default {
     computed: {
         options() {
             return {
-                range: this.value,
+                range: this.modelValue,
                 step: this.step,
                 margin: this.margin,
                 connect: this.connect,
@@ -71,7 +73,7 @@ export default {
                 orientation: this.orientation,
                 behaviour: this.behaviour,
                 tooltips: this.tooltips,
-                start: [this.value.min, this.value.max],
+                start: [this.modelValue.min, this.modelValue.max],
             };
         },
     },
@@ -104,13 +106,13 @@ export default {
         change([min, max]) {
             const int = Number.parseInt;
 
-            if (this.value.min === int(min) && this.value.max === int(max)) {
+            if (this.modelValue.min === int(min) && this.modelValue.max === int(max)) {
                 return;
             }
 
             if (!this.manual) {
-                this.value.min = int(min);
-                this.value.max = int(max);
+                this.modelValue.min = int(min);
+                this.modelValue.max = int(max);
             }
 
             this.$emit('change', { min: int(min), max: int(max) });

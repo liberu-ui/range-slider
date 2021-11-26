@@ -91,7 +91,7 @@ export default {
         this.init();
     },
 
-    beforeDestroy() {
+    beforeUnmount() {
         this.slider.off('change');
         this.slider.off('set');
         this.slider.destroy();

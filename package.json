@@ -1,5 +1,5 @@
 {
-  "name": "@cgdsoftware/range-slider",
+  "name": "@liberu-ui/range-slider",
   "version": "2.0.7",
   "description": "range-slider",
   "main": "index.js",

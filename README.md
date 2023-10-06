@@ -1,10 +1,10 @@
 # Range Slider
 
-![NPM License](https://img.shields.io/npm/l/@enso-ui/range-slider.svg)
-![npm download](https://img.shields.io/npm/dm/@enso-ui/range-slider.svg)
-![GitHub top language](https://img.shields.io/github/languages/top/enso-ui/range-slider.svg)
-![GitHub issues](https://img.shields.io/github/issues/enso-ui/range-slider.svg)
-![npm version](https://img.shields.io/npm/v/@enso-ui/range-slider.svg)
+![NPM License](https://img.shields.io/npm/l/@liberu-ui/range-slider.svg)
+![npm download](https://img.shields.io/npm/dm/@liberu-ui/range-slider.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/liberu-ui/range-slider.svg)
+![GitHub issues](https://img.shields.io/github/issues/liberu-ui/range-slider.svg)
+![npm version](https://img.shields.io/npm/v/@liberu-ui/range-slider.svg)
 
 Vue Range Slider
 

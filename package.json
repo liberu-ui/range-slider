@@ -1,6 +1,6 @@
 {
   "name": "@liberu-ui/range-slider",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "range-slider",
   "main": "index.js",
   "scripts": {
